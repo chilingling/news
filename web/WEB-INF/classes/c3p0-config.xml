@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<c3p0-config >
+    <named-config name="chilingdb">
+        <!--账号-->
+        <property name="user">root</property>
+        <!--密码-->
+        <property name="password">123456</property>
+        <!--jar包-->
+        <property name="driverClass">com.mysql.jdbc.Driver</property>
+        <!--这里配置的是要连接到的数据库-->
+        <property name="jdbcUrl">jdbc:mysql://47.106.248.255:3306/news?characterEncoding=utf-8</property>
+        <!--如果池中数据连接不够时一次增长多少个-->
+        <property name="acquireIncrement">5</property>
+        <!--初始化连接数-->
+        <property name="initialPoolSize">20</property>
+        <!--最小连接数-->
+        <property name="minPoolSize">10</property>
+        <!--最大链接数-->
+        <property name="maxPoolSize">10</property>
+        <!--JDBC的标准参数，用以控制数据源内加载的PreparedStatements数量-->
+        <property name="maxStatements">0</property>
+        <!--连接池内单个连接所拥有的最大缓存statements数-->
+        <property name="maxStatementsPreConnection">5</property>
+    </named-config>
+</c3p0-config>
