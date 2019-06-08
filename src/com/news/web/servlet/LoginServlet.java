@@ -13,9 +13,6 @@ import java.rmi.ServerException;
 import java.sql.SQLException;
 
 public class LoginServlet extends HttpServlet {
-    protected void doGet (HttpServletRequest request, HttpServletResponse response) throws ServerException, IOException{
-
-    }
     protected void doPost (HttpServletRequest request, HttpServletResponse response) throws ServerException, IOException {
         request.setCharacterEncoding("utf-8");
         String res = GetPostData.getPostData(request);
@@ -41,7 +38,7 @@ public class LoginServlet extends HttpServlet {
             Cookie username = new Cookie("username", user.getName());
             username.setMaxAge(1000*60);
             username.setHttpOnly(true);
-            username.setSecure(true);
+//            username.setSecure(true);
             response.addCookie(username);
 //            request.getSession().setAttribute("user", user.getName());
         } else {

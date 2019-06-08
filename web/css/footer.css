@@ -1,0 +1,25 @@
+footer{
+    padding: 12px 0 16px;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.65);
+}
+/* 回到顶部按钮 */
+.back-top-menu{
+    display: none;
+    position: fixed;
+    width: 46px;
+    height: 46px;
+    right: 32px;
+    bottom: 50px;
+    border: 1px solid #e2e2e2;
+    text-align: center;
+    line-height: 46px;
+    color: rgba(0, 0, 0, 0.85);
+    z-index: 9;
+    background-color: #fff;
+}
+.back-top-menu:hover{
+    cursor: pointer;
+    color: rgba(34, 145, 247, 0.85);
+    border-color: rgba(34, 145, 247, 0.85);
+}

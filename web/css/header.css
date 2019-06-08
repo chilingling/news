@@ -1,0 +1,100 @@
+body{
+    width: 100%;
+    min-height: 200vh;
+}
+header{
+    min-height: 80px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    font-size: 18px;
+    border-bottom: 1px solid rgb(235, 235, 235);
+    line-height: 80px;
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+    background-color: #fff;
+    transition: all 0.3s ease-in-out;
+    margin-bottom: 20px;
+}
+.header-title-nav{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
+@media screen and (max-width: 920px) {
+    header, .header-title-nav{
+        flex-flow: column wrap;
+    }
+    header {
+        text-align: center;
+        position: static;
+        width: 100%;
+        line-height: 46px;
+    }
+    header h1 {
+        background: #4e54c8;  /* fallback for old browsers */
+        background: -webkit-linear-gradient(to top, #8f94fb, #4e54c8);  /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to top, #8f94fb, #4e54c8); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        font-size: 24px;
+        color: #fff;
+    }
+
+}
+.header-title-nav>h1{
+    box-sizing: border-box;
+    padding: 16px;
+    margin: 0;
+}
+.header-title-nav>.title>.login-avater{
+    display: none;
+}
+@media screen and (max-width: 920px){
+    .header-title-nav>.title>.login-avater{
+        display: block;
+        float: right;
+        width: 20px;
+        height: 20px;
+    }
+}
+.header-title-nav>nav>ul{
+    padding-left: 0;
+}
+.header-title-nav>nav>ul>li{
+    display: inline-block;
+}
+.header-title-nav>nav>ul>li>a.active{
+    font-weight: bold;
+    border-bottom: 2px solid rgba(72, 137, 243, .9);
+}
+.header-title-nav>nav>ul>li>a{
+    padding: 16px;
+    line-height: 80px;
+    color: rgba(0, 0, 0, 0.65);
+    font-weight: 400;
+}
+.header-title-nav>nav>ul>li>a:hover{
+    text-decoration: none;
+    color: rgba(34, 145, 247, 0.88);
+}
+.sign-login-box{
+    padding-right: 32px;
+    line-height: 80px;
+}
+.user-box:hover{
+    cursor: pointer;
+}
+.user-avatar{
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    margin-right: 4px;
+}
+@media screen and (max-width: 920px){
+    nav{
+        background-color: rgb(240, 248, 255);
+    }
+    .sign-login-box{
+        display: none;
+    }
+}

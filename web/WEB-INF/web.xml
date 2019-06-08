@@ -99,4 +99,29 @@
         <servlet-name>UpdatePasswd</servlet-name>
         <url-pattern>/updatepasswd</url-pattern>
     </servlet-mapping>
+    <!--网页端首页-->
+    <servlet>
+        <servlet-name>IndexNews</servlet-name>
+        <servlet-class>com.news.web.servlet.jsp.IndexServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>IndexNews</servlet-name>
+        <url-pattern>/index</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>ClassifyNews</servlet-name>
+        <servlet-class>com.news.web.servlet.jsp.ClassifyNews</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ClassifyNews</servlet-name>
+        <url-pattern>/classifynews</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>DetailNews</servlet-name>
+        <servlet-class>com.news.web.servlet.jsp.DetailServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DetailNews</servlet-name>
+        <url-pattern>/detailnews</url-pattern>
+    </servlet-mapping>
 </web-app>

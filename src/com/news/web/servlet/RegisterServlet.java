@@ -39,9 +39,8 @@ public class RegisterServlet extends HttpServlet {
 //            response.sendRedirect(request.getContextPath() + "/index.jsp");
             json = JsonUtil.toJson(200, "ok", user);
             Cookie username = new Cookie("username", user.getName());
-            username.setMaxAge(1000*60);
+            username.setMaxAge(60*60);
             username.setHttpOnly(true);
-            username.setSecure(true);
             response.addCookie(username);
         } else {
             json = JsonUtil.toJson(555, "ok", "注册失败");

@@ -3,7 +3,8 @@ package com.news.domain;
 public class User {
     private String name;
     private int id;
-
+    private String passwd;
+    private String phone;
     public int getId() {
         return id;
     }
@@ -36,7 +37,6 @@ public class User {
         this.phone = phone;
     }
 
-    private String passwd;
-    private String phone;
+
 
 }

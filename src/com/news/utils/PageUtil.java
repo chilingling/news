@@ -110,7 +110,7 @@ public class PageUtil<T> {
         JSONObject res = new JSONObject();
         res.put("totalcount", getTotal());  // 总记录条数
         res.put("totalpages", getTotalpages()); // 总页数
-        res.put("currrentPage", getPageNumber()); // 当前页面号
+        res.put("currentPage", getPageNumber()); // 当前页面号
         res.put("size", getSize()); // 每一页的数量
         res.put("isFirstPage", isFirstPage()); // 是否是第一页
         res.put("isLastPage", isLastPage()); // 是否是最后一页

@@ -66,7 +66,7 @@ public class Comment {
     private String time;
     private int likesnum;
     private int id;
-
+    private String username;
     public String getUsername() {
         return username;
     }
@@ -75,7 +75,7 @@ public class Comment {
         this.username = username;
     }
 
-    private String username;
+
 
     public int getId() {
         return id;

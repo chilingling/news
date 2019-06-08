@@ -4,6 +4,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.news.dao.CommentDao;
 import com.news.dao.LikesDao;
 import com.news.domain.Comment;
+import com.news.domain.User;
 
 import java.sql.SQLException;
 import java.util.List;
@@ -56,6 +57,8 @@ public class CommentService {
         for (int i = 0; i < list.size(); i++){
             Comment item = list.get(i);
             int num = getCommnetLikesNumById(item.getId());
+            User user = new UserService().getUserById(item.getFromuid());
+            item.setUsername(user.getName());
             item.setLikesnum(num);
             boolean isLiked = false;
             try {
