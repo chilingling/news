@@ -7,7 +7,7 @@ footer{
 .back-top-menu{
     display: none;
     position: fixed;
-    width: 46px;
+    width: 68px;
     height: 46px;
     right: 32px;
     bottom: 50px;
@@ -22,4 +22,13 @@ footer{
     cursor: pointer;
     color: rgba(34, 145, 247, 0.85);
     border-color: rgba(34, 145, 247, 0.85);
+}
+.back-top-icon{
+    line-height: 46px;
+}
+.read-mode-box{
+    position: fixed;
+    right: 32px;
+    bottom: 120px;
+    z-index: 10;
 }

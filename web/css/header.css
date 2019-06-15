@@ -1,6 +1,7 @@
 body{
     width: 100%;
     min-height: 200vh;
+    transition: all ease-in-out .3s;
 }
 header{
     min-height: 80px;
@@ -10,7 +11,7 @@ header{
     font-size: 18px;
     border-bottom: 1px solid rgb(235, 235, 235);
     line-height: 80px;
-    position: fixed;
+    /*position: fixed;*/
     width: 100%;
     z-index: 1;
     background-color: #fff;
@@ -39,9 +40,13 @@ header{
         font-size: 24px;
         color: #fff;
     }
+    .night-header .header-title-nav>h1{
+        background: #0f1114;
+    }
 
 }
 .header-title-nav>h1{
+    min-width: 140px;
     box-sizing: border-box;
     padding: 16px;
     margin: 0;
@@ -80,6 +85,7 @@ header{
 .sign-login-box{
     padding-right: 32px;
     line-height: 80px;
+    min-width: 132px;
 }
 .user-box:hover{
     cursor: pointer;
@@ -94,7 +100,35 @@ header{
     nav{
         background-color: rgb(240, 248, 255);
     }
+    .night-header nav{
+        background-color: #0f1114;
+    }
     .sign-login-box{
         display: none;
     }
+}
+.content-article p img{
+    max-width: 100%;
+}
+.change-passwd-tips{
+    visibility: hidden;
+    color: #f00;
+}
+
+.night-body{
+    background-color: #0f1114;
+    color: rgba(255, 255, 255, 0.65);
+}
+.night-header{
+    background: #0f1114;
+    color: rgba(255,255,255, .65);
+}
+.header-title-nav>nav>ul>li>a.night-header-nav-a{
+    color: rgba(255,255,255, .65);
+}
+.container .info.night-info{
+    color: rgba(255, 255, 255, .65);
+}
+.night-footer{
+    color: rgba(255,255,255, .65);
 }

@@ -1,7 +1,7 @@
 
 
 .main{
-    padding-top: 100px;
+    /*padding-top: 100px;*/
 }
 @media screen and (max-width: 920px){
     .main{
@@ -11,7 +11,7 @@
 .news-item-block{
     display: flex;
     flex-flow: row nowrap;
-    justify-content: space-between;
+    /*justify-content: space-between;*/
     width: 670px;
 }
 .news-list{
@@ -60,6 +60,7 @@
 .news-item-content-block{
     display: flex;
     flex-flow: column;
+    width: 100%;
     justify-content: space-between;
 }
 .news-item-content-title{
@@ -84,4 +85,14 @@
     .news-item-block, .news-list> li{
         width: 100%;
     }
+}
+
+.news-item-content-title.night-news-item-content-title{
+    color: rgba(255,255,255, .65);
+}
+.news-item-content-title.night-news-item-content-title:hover{
+    color: rgba(255,255,255, .85);
+}
+.news-list> li.night-li:hover{
+    background-color: #000;
 }

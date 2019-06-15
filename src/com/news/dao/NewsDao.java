@@ -7,6 +7,7 @@ import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.handlers.BeanHandler;
 import org.apache.commons.dbutils.handlers.BeanListHandler;
 
+import javax.xml.crypto.Data;
 import java.sql.SQLException;
 import java.util.List;
 
@@ -35,6 +36,12 @@ public class NewsDao {
         String sql = "update news set commentnum = commentnum + 1 where id = " + id;
         int update = runner.update(sql);
         return update;
+    }
+    public int decreaseCommentNumById (int id) throws  SQLException {
+        QueryRunner runner = new QueryRunner(DataSourceUtils.getDataSource());
+        String sql = "update news set commentnum = commentnum - 1 where id = " + id;
+        int update = runner.update(sql);
+        return  update;
     }
     public int getNewsNumbers () throws SQLException{
         QueryRunner runner = new QueryRunner(DataSourceUtils.getDataSource());

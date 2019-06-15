@@ -15,7 +15,7 @@
                     <a href="/news/detailnews?id=${item.getId()}" class="news-item-block-img"><img src="${item.getImg()}" alt="${item.getTitle()}"></a>
                     <div class="news-item-content-block">
                         <a href="/news/detailnews?id=${item.getId()}" class="news-item-content-title"><h4>${item.getTitle()}</h4></a>
-                        <p class="news-item-content-info"><span>${item.getSource()}</span><span class="comment-count glyphicon glyphicon-comment glyphicon glyphicon-comment">${item.getCommentnum()}</span></p>
+                        <p class="news-item-content-info"><span>${item.getSource()}</span><span><span class="comment-count glyphicon glyphicon-comment"></span><span>&nbsp;${item.getCommentnum()}</span></span></p>
                     </div>
                 </div>
             </li>

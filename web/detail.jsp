@@ -69,8 +69,17 @@
                                 <div class="comment-content">
                                     <%--<p><a href="" class="comment-user">${item.getUsername()}</a><span class="comment-time">${RelativeDateFormat.format(item.getTime())}</span></p>--%>
                                     <%--<% String formatTime = RelativeDateFormat.format(${item.getTime}) %>--%>
-                                    <p><a href="" class="comment-user">${item.getUsername()}</a><span class="comment-time">${item.getTime()}</span></p>
-                                    <p>${item.getContent()}</p>
+                                    <p>
+                                        <a href="" class="comment-user">${item.detail.username}</a>
+                                        <span class="comment-time">${item.detail.time}</span>
+                                        <span class="text-right">
+                                            <c:if test="${cookie['username'].value == item.user.name}">
+                                                <a class="delete-comment-btn" data-id="${item.detail.id}" >删除评论</a>
+                                            </c:if>
+                                            <a href="">举报</a>
+                                        </span>
+                                    </p>
+                                    <p>${item.detail.content}</p>
                                 </div>
                             </div>
                             <!-- 回复 -->
@@ -92,12 +101,37 @@
                             <%--</div>--%>
                             <!-- 赞与回复按钮 -->
                             <div class="comment-likes-reply-box">
-                                <a class="comment-likes-btn" data-id = "${item.getId()}">赞 ${item.getLikesnum()}</a>
+                                <a class="comment-likes-btn" data-id = "${item.detail.id}">赞 ${item.detail.likesnum}</a>
                                 <%--<span class="comment-reply-btn">回复</span>--%>
                             </div>
                         </div>
                     </li>
                 </c:forEach>
+            </ul>
+
+        </div>
+        <div class="container text-center">
+            <%--For displaying Page numbers.
+            The when condition does not display a link for the current page--%>
+            <ul class="pagination text-center">
+                <%-- 上一页 --%>
+                <c:if test="${pagination.currentPage != 1}">
+                    <li class="page-item"><a class="page-link" href="${preLink}page=${pagination.currentPage - 1}">上一页</a></li>
+                </c:if>
+                <c:forEach begin="1" end="${pagination.totalpages}" var="i">
+                    <c:choose>
+                        <c:when test="${pagination.currentPage eq i}">
+                            <li class="page-item active"><a class="page-link">${i}</a></li>
+                        </c:when>
+                        <c:otherwise>
+                            <li class="page-item"><a class="page-link" href="${preLink}page=${i}">${i}</a></li>
+                        </c:otherwise>
+                    </c:choose>
+                </c:forEach>
+                <%--下一页 --%>
+                <c:if test="${pagination.currentPage lt pagination.totalpages}">
+                    <li class="page-item"><a class="page-link" href="${preLink}page=${pagination.currentPage + 1}">下一页</a></li>
+                </c:if>
             </ul>
         </div>
     </div>
@@ -111,6 +145,7 @@
                     "newsid": id,
                     "content": comment
                 }
+                $('.add-comment-btn').attr("disabled")
                 $.ajax({
                     type: "POST",
                     url: "/news/addcomment",
@@ -132,6 +167,17 @@
                     url: "/news/likescomment?id=" + id,
                     dataType: 'json',
                     contentType: "application/json",
+                    success: function (data) {
+                        if (data.status === 200) {
+                            location.reload()
+                        }
+                    }
+                })
+            })
+            $('.delete-comment-btn').click(function () {
+                var id = $(this).attr("data-id");
+                $.ajax({
+                    url: "/news/deletecomment?id=" + id,
                     success: function (data) {
                         if (data.status === 200) {
                             location.reload()

@@ -43,10 +43,16 @@ public class DeleteCommentServlet extends HttpServlet {
         }
         boolean isSuccess = service.deleteCommentById(comment.getId());
         if (isSuccess) {
+
             json = JsonUtil.toJson(200, "OK", null);
         } else {
             json = JsonUtil.toJson(400, "error", "删除评论失败");
         }
         resp.getWriter().write(json);
+    }
+
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        doDelete(req, resp);
     }
 }

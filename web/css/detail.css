@@ -1,7 +1,7 @@
 .container{
     max-width: 756px;
     line-height: 2.2;
-    padding-top: 100px;
+    /*padding-top: 100px;*/
 }
 .container .title{
     font-weight: 700;

@@ -182,7 +182,17 @@ public class CommentService {
     }
     public boolean deleteCommentById (int id) {
         CommentDao dao = new CommentDao();
-        int update = 0;
+        Integer update = null;
+        Comment comment = null;
+        try {
+            comment = dao.getSingleCommentById(id);
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
+        if (comment != null) {
+            NewsService service = new NewsService();
+            service.decreaseCommentNumById(comment.getNewsid());
+        }
         try {
             update = dao.deleteCommentById(id);
         }catch (SQLException e){

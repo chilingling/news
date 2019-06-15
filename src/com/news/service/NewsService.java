@@ -38,6 +38,16 @@ public class NewsService {
         }
         return update > 0;
     }
+    public boolean decreaseCommentNumById (int id) {
+        NewsDao dao = new NewsDao();
+        int update = 0;
+        try {
+            update = dao.decreaseCommentNumById(id);
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
+        return  update > 0;
+    }
     public int getNewsNumber () {
         NewsDao dao = new NewsDao();
         int num = 0;
